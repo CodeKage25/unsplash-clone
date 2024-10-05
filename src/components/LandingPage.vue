@@ -388,5 +388,16 @@
       max-width: 100%;
     }
   }
+
+  @media (max-width: 768px) {
+    .skeleton-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .skeleton-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
   </style>
   
