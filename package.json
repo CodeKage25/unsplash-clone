@@ -12,7 +12,6 @@
     "core-js": "^3.8.3",
     "material-icons": "^1.13.12",
     "vue": "^3.2.13",
-    "vue-js-modal": "^2.0.1",
     "vue-skeleton-loader": "^1.0.0"
   },
   "devDependencies": {

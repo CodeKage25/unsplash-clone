@@ -22,7 +22,7 @@
       <!-- Skeleton Loading Placeholders -->
       <div v-if="isLoading" class="skeleton-flex">
         <div class="skeleton-container">
-      <div v-for="n in 6" :key="n" class="skeleton-card"></div>
+      <div v-for="n in 9" :key="n" class="skeleton-card"></div>
     </div>
       </div>
   
@@ -90,7 +90,7 @@
     this.error = null;
 
     const fetchImagesPromise = unsplashClient
-      .get('/search/photos', { params: { query: this.query, per_page: 8 } })
+      .get('/search/photos', { params: { query: this.query, per_page: 9 } })
       .then((response) => {
         this.images = response.data.results;
         this.hasSearched = true;
@@ -98,11 +98,8 @@
       .catch(() => {
         this.error = 'Failed to fetch images. Please try again.';
       });
-
-    // Ensure loading skeleton shows for at least 5 seconds
     const minimumLoadingTime = new Promise((resolve) => setTimeout(resolve, 5000));
 
-    // When both the API request and the minimum loading time are done, hide the loader
     Promise.all([fetchImagesPromise, minimumLoadingTime]).finally(() => {
       this.isLoading = false;
     });
@@ -199,7 +196,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -40px; /* To overlap the header */
+    top: -40px; 
     z-index: 0;
     z-index: 2;
   }
@@ -251,7 +248,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background overlay */
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
